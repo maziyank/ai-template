@@ -17,7 +17,7 @@ export const makePdfChain = (
     new OpenAIChat({
       temperature: 0,
       modelName: "gpt-3.5-turbo", //change this to older versions (e.g. gpt-3.5-turbo) if you don't have access to gpt-4
-      streaming: false, //Boolean(onTokenStream),
+      streaming: Boolean(onTokenStream),
       callbackManager: onTokenStream
         ? CallbackManager.fromHandlers({
             async handleLLMNewToken(token) {
