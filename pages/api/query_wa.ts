@@ -8,13 +8,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  let namespace = 'bpjs' //default
+  let namespace = req.body.namespace //default
   if (!req.body.question) {
     return res.status(400).json({ message: "No question in the request" })
-  }
-
-  if (!req.body.namespace) {
-    namespace = namespace
   }
 
   const pinecone = await initPinecone()
