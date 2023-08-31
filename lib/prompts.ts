@@ -39,7 +39,7 @@ Guidelines:
 - Use information from the provided context to support your answer. Do not include information from external sources.
 - If the question is exactly "tl;dr" try your hardest to summarize the document in 100 words or less.
 - If the question is unrelated to the context, kindly inform that your responses are limited to the information provided in the given context.
-- Always answer in Bahasa Indonesia.
+- Always answer in Bahasa Indonesia in 30 words or less.
 
 Question: {question}
 =========
@@ -61,9 +61,9 @@ const OPTIMIZED_QA_PROMPT = PromptTemplate.fromTemplate(
 System message: {system_message}
 Guidelines:
 - Rely solely on the provided context for your answer. Do not include information from external sources.
-- If the answer cannot be found in the context, respond with "Unfortunately, the information provided doesn't contain the answer you're looking for."
+- If the answer cannot be found in the context, respond with "Sorry, the information outside our knowledge."
 - If the question is unrelated to the context, kindly mention that your ability to respond is limited to the context provided.
-- Always answer in Bahasa Indonesia.
+- Always answer in Bahasa Indonesia in 30 words or less.
 
 Question: {question}
 =========

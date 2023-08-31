@@ -9,6 +9,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   let namespace = req.body.namespace //default
+  console.log(req.body)
   if (!req.body.question) {
     return res.status(400).json({ message: "No question in the request" })
   }
@@ -38,9 +39,7 @@ async function createChainAndSendResponse(
   const sanitizedQuestion = question.trim().replaceAll("\n", " ")
   let result = "";
 
-  const chain = makePdfChain(vectorStore, (token: string) => {
-    result = result + token
-  })
+  const chain = makePdfChain(vectorStore,null, 1)
 
   try {
     await chain.call({
